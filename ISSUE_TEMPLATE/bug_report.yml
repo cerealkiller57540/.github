@@ -1,0 +1,68 @@
+name: Bug report
+description: Something looks wrong or does not work.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. The more of the fields below you fill in, the faster it gets fixed.
+  - type: input
+    id: card_version
+    attributes:
+      label: Card version
+      description: Shown in the browser console when the card loads, or in HACS.
+      placeholder: e.g. 3.10.4
+    validations:
+      required: true
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+      description: Settings → About.
+      placeholder: e.g. 2026.10.2
+    validations:
+      required: true
+  - type: dropdown
+    id: client
+    attributes:
+      label: Where do you see the problem?
+      multiple: true
+      options:
+        - Desktop browser
+        - Mobile browser
+        - Home Assistant app (iOS / iPadOS)
+        - Home Assistant app (Android)
+        - Wall tablet / kiosk
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: e.g. Chrome 141 on Windows 11, Safari on iPad Air
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: What you expected, and what you got instead. Screenshots help a lot.
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Card configuration
+      description: The YAML of the card (Edit card → Show code editor). Remove anything private.
+      render: yaml
+  - type: textarea
+    id: console
+    attributes:
+      label: Browser console errors
+      description: Open the developer tools (F12) → Console, reload the dashboard, and paste any red lines.
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I cleared the browser cache (or the app cache) and the problem is still there.
+          required: true

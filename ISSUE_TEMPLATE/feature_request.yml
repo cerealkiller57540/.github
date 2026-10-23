@@ -1,0 +1,21 @@
+name: Idea or feature request
+description: Suggest an option, an effect or a new card.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would you like the card to do or show?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What is it for in your setup? A real use case helps decide how to build it.
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Sketches, screenshots, or other cards that do something close.
